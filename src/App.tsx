@@ -29,7 +29,7 @@ export default function App() {
       {/* Navigation */}
       <nav 
         className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 md:px-12 transition-all duration-300 ${
-          isScrolled ? "bg-black/90 backdrop-blur-lg border-b border-white/5 py-3" : "bg-transparent py-6"
+          isScrolled ? "bg-[#0a0a0a]/90 backdrop-blur-lg border-b border-white/5 py-3" : "bg-transparent py-6"
         }`}
       >
         {/* Logo */}
@@ -152,7 +152,7 @@ export default function App() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="mt-32 py-4 md:py-6 px-10 md:px-16 bg-black/30 rounded-full border-t border-[#654a91] flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 max-w-4xl mx-auto backdrop-blur-2xl"
+            className="mt-32 py-4 md:py-6 px-10 md:px-16 bg-[#0c0c0c]/30 rounded-full border-t border-[#654a91] flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 max-w-4xl mx-auto backdrop-blur-2xl"
           >
             {/* Google Reviews */}
             <div className="shrink-0">
@@ -344,11 +344,11 @@ export default function App() {
         </div>
 
         {/* Stats Section */}
-        <section className="py-8 md:py-12 relative overflow-hidden">
+        <section className="py-12 md:py-16 relative overflow-hidden">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1000px] h-[300px] bg-[#2f2441]/20 blur-[130px] rounded-full -z-10" />
           
           <div className="max-w-6xl mx-auto px-6">
-            <div className="flex flex-col md:flex-row items-center justify-center md:-space-x-24">
+            <div className="flex flex-col md:flex-row items-center justify-center -space-y-12 md:space-y-0 md:-space-x-12">
               {[
                 { number: "10+", label: "Years of Experience" },
                 { number: "2000+", label: "Successful Projects" },
@@ -361,13 +361,13 @@ export default function App() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: idx * 0.1 }}
-                  className={`w-40 h-40 md:w-56 md:h-56 rounded-full bg-[#453b56]/80 border border-white/20 backdrop-blur-3xl flex flex-col items-center justify-center text-center p-6 -mb-16 md:mb-0 relative group hover:bg-[#453b56] transition-all duration-500 shadow-[0_0_60px_rgba(0,0,0,0.6)] ${
+                  className={`w-44 h-44 md:w-52 md:h-52 rounded-full bg-[#453b56]/80 border border-white/20 backdrop-blur-3xl flex flex-col items-center justify-center text-center p-4 relative group hover:bg-[#453b56] transition-all duration-500 shadow-[0_0_40px_rgba(0,0,0,0.5)] ${
                     idx % 2 === 1 ? 'md:-translate-y-8' : 'md:translate-y-8'
                   }`}
                   style={{ zIndex: idx }}
                 >
                   <span className="text-3xl md:text-5xl font-bold font-sans tracking-tighter mb-1 text-white">{stat.number}</span>
-                  <p className="text-[9px] md:text-[12px] font-normal text-gray-200 uppercase tracking-[0.1em] font-sans max-w-[100px] leading-tight">
+                  <p className="text-[9px] md:text-[11px] font-normal text-gray-200 uppercase tracking-[0.1em] font-sans max-w-[90px] leading-tight">
                     {stat.label}
                   </p>
                   
@@ -380,7 +380,7 @@ export default function App() {
         </section>
 
         {/* Our Best Services Section Wrapper */}
-        <div className="w-full bg-black">
+        <div className="w-full bg-[#0a0a0a]">
           <section className="py-32 max-w-6xl mx-auto px-6">
             <div className="flex flex-col items-center text-center">
             {/* Badge */}
@@ -479,7 +479,7 @@ export default function App() {
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                   style={{ backgroundImage: `url('https://framerusercontent.com/images/ZTUk0b5iK6nEA7yCLACn1LKtBjU.webp?scale-down-to=512&width=1285&height=1000')` }}
                 />
-                <div className="absolute inset-0 bg-black/50" />
+                <div className="absolute inset-0 bg-[#0a0a0a]/50" />
                 
                 <div className="relative z-10 flex flex-col h-full">
                   <h3 className="font-unbounded text-2xl md:text-3xl font-normal text-white mb-6 leading-tight">Website Operations</h3>
@@ -537,7 +537,7 @@ export default function App() {
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                   style={{ backgroundImage: `url('https://framerusercontent.com/images/OP253dOnpn7qMVBxez2GTl2oYeo.jpg?scale-down-to=1024&width=1200&height=900')` }}
                 />
-                <div className="absolute inset-0 bg-black/60" />
+                <div className="absolute inset-0 bg-[#0a0a0a]/60" />
                 
                 <div className="relative z-10 flex flex-col h-full">
                   <h3 className="font-unbounded text-2xl md:text-3xl font-normal text-white mb-6 leading-tight">Flexible Support, Scaled to You</h3>
@@ -586,6 +586,54 @@ export default function App() {
           </div>
         </section>
       </div>
+
+      {/* New Section: Conversion-Focused Design Marquee */}
+      <div className="w-full py-12 md:py-16 overflow-hidden relative border-t border-white/5 bg-[#0a0a0a]">
+        <div className="flex whitespace-nowrap">
+          <motion.div 
+            initial={{ x: 0 }}
+            animate={{ x: "-50%" }}
+            transition={{ 
+              duration: 35, 
+              repeat: Infinity, 
+              ease: "linear" 
+            }}
+            className="flex items-center gap-8 md:gap-16 pr-8 md:pr-16"
+          >
+            {[1, 2].map((group) => (
+              <div key={group} className="flex items-center gap-8 md:gap-16">
+                {["Conversion-Focused Design", "Conversion-Focused Design", "Conversion-Focused Design"].map((item, index) => (
+                  <div key={index} className="flex items-center gap-8 md:gap-16">
+                    <span className="text-4xl md:text-[80px] font-normal font-unbounded text-white tracking-[-0.04em] uppercase leading-none">
+                      {item}
+                    </span>
+                    <div className="flex items-center justify-center">
+                      <svg width="40" height="40" viewBox="0 0 100 100" className="text-white w-6 h-6 md:w-12 md:h-12 opacity-30">
+                        <path d="M50 0 L56 44 L100 50 L56 56 L50 100 L44 56 L0 50 L44 44 Z" fill="currentColor" />
+                      </svg>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Large Gallery Image Section */}
+      <section className="bg-[#0a0a0a] pb-24 md:pb-32 px-6">
+        <div className="max-w-[1400px] mx-auto overflow-hidden rounded-[40px] shadow-[0_30px_100px_rgba(0,0,0,0.8)] border border-white/5">
+          <motion.img 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            src="https://framerusercontent.com/images/cZSRzq0SOyVgW917zjEMq8OWk.webp?width=1920&height=1080" 
+            alt="Conversion-Focused Design Portfolio" 
+            className="w-full h-auto object-cover"
+          />
+        </div>
+      </section>
     </div>
   );
 }
