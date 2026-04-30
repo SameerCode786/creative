@@ -535,12 +535,11 @@ export default function App() {
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                   style={{ backgroundImage: `url('https://framerusercontent.com/images/ZTUk0b5iK6nEA7yCLACn1LKtBjU.webp?scale-down-to=512&width=1285&height=1000')` }}
                 />
-                <div className="absolute inset-0 bg-[#0a0a0a]/60" />
                 
-                <div className="relative z-10 flex flex-col h-full">
-                  <h3 className="font-unbounded text-xl md:text-3xl font-normal text-white mb-6 leading-tight">Website Operations</h3>
+                <div className="relative z-10 flex flex-col h-full uppercase">
+                  <h3 className="font-unbounded text-xl md:text-[34px] font-normal text-white mb-6 leading-tight">Website Operations</h3>
                   
-                  <div className="space-y-2.5 md:space-y-3 mb-6">
+                  <div className="space-y-4 md:space-y-4 mb-4 md:mb-6">
                     {[
                       "We detect and resolve issues in real-time",
                       "Direct access to human experts, not bots",
@@ -548,16 +547,23 @@ export default function App() {
                       "Secure daily snapshots at the edge",
                       "Built-in ssl, caching, and advanced shields"
                     ].map((feature, i) => (
-                      <div key={i} className="flex items-center gap-2.5 md:gap-3">
-                        <div className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-white/10 flex items-center justify-center border border-white/20">
-                          <CheckCircle2 size={10} className="text-white" />
+                      <motion.div 
+                        key={i} 
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.1 * i, ease: "easeOut" }}
+                        className="flex items-center gap-3 md:gap-4"
+                      >
+                        <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-white/20 flex items-center justify-center border border-white/30 shrink-0">
+                          <CheckCircle2 size={12} className="text-white" />
                         </div>
-                        <span className="text-xs md:text-sm text-gray-200 font-sans">{feature}</span>
-                      </div>
+                        <span className="text-[13px] md:text-[15px] font-bold text-white font-sans tracking-tight">{feature}</span>
+                      </motion.div>
                     ))}
                   </div>
 
-                  <p className="text-xs md:text-sm text-gray-300 font-sans leading-relaxed mb-8 max-w-sm">
+                  <p className="text-[13px] md:text-[14px] text-white/90 font-sans leading-relaxed mb-8 max-w-[320px] normal-case">
                     Keep your website running smoothly and performing at its best with our full-service maintenance solutions.
                   </p>
 
@@ -565,7 +571,7 @@ export default function App() {
                     <motion.button 
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="btn-gradient px-6 md:px-8 py-3 md:py-3.5 rounded-full flex items-center gap-2 text-[10px] md:text-sm font-black tracking-widest uppercase shadow-xl w-fit"
+                      className="btn-gradient px-8 md:px-10 py-4 md:py-4.5 rounded-full flex items-center gap-3 text-[10px] md:text-xs font-black tracking-widest uppercase shadow-2xl w-fit whitespace-nowrap"
                     >
                       HIRE US
                       <ArrowRight size={18} />
@@ -575,7 +581,7 @@ export default function App() {
                       <div className="flex gap-1 mb-1.5">
                         {[...Array(5)].map((_, i) => <Star key={i} size={12} md:size={14} fill="#fb923c" className="text-orange-400" />)}
                       </div>
-                      <span className="text-sm md:text-lg font-bold text-white italic">“Mindblowing Results.”</span>
+                      <span className="text-[15px] md:text-lg font-bold text-white italic">“Mindblowing Results.”</span>
                     </div>
                   </div>
                 </div>
@@ -586,47 +592,53 @@ export default function App() {
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="relative min-h-[480px] md:min-h-[520px] rounded-[24px] md:rounded-[40px] overflow-hidden flex flex-col p-6 md:p-12 text-left group"
+                className="relative min-h-[520px] md:min-h-[600px] rounded-[32px] md:rounded-[56px] overflow-hidden flex flex-col p-8 md:p-14 text-left group shadow-[0_40px_80px_-20px_rgba(0,0,0,0.9)]"
               >
                 {/* Background Image */}
                 <div 
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                   style={{ backgroundImage: `url('https://framerusercontent.com/images/OP253dOnpn7qMVBxez2GTl2oYeo.jpg?scale-down-to=1024&width=1200&height=900')` }}
                 />
-                <div className="absolute inset-0 bg-[#0a0a0a]/70" />
                 
-                <div className="relative z-10 flex flex-col h-full">
-                  <h3 className="font-unbounded text-xl md:text-3xl font-normal text-white mb-6 leading-tight uppercase">Flexible Support</h3>
+                <div className="relative z-10 flex flex-col h-full uppercase">
+                  <h3 className="font-unbounded text-xl md:text-[34px] font-normal text-white mb-6 leading-tight">Flexible Support, Scaled to You</h3>
                   
-                  <div className="space-y-2.5 md:space-y-3 mb-6">
+                  <div className="space-y-4 md:space-y-4 mb-4 md:mb-6">
                     {[
                       "Strategic leadership rooted in performance",
-                      "Digital strategy & scalability roadmaps",
-                      "Budget stewardship & creative direction",
-                      "Direct partnership with your internal teams",
+                      "Digital strategy, funnels & scalability roadmaps",
+                      "Budget stewardship, audits & creative direction",
+                      "Direct partnership with your internal or external teams",
                       "Expert Email, SMS, CRM & CRO Execution"
                     ].map((feature, i) => (
-                      <div key={i} className="flex items-center gap-2.5 md:gap-3">
-                        <div className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-white/10 flex items-center justify-center border border-white/20">
-                          <CheckCircle2 size={10} className="text-white" />
+                      <motion.div 
+                        key={i} 
+                        initial={{ opacity: 0, x: -35 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.1 * i, ease: "easeOut" }}
+                        className="flex items-center gap-3 md:gap-4"
+                      >
+                        <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-white/20 flex items-center justify-center border border-white/30 shrink-0">
+                          <CheckCircle2 size={12} className="text-white" />
                         </div>
-                        <span className="text-xs md:text-sm text-gray-200 font-sans">{feature}</span>
-                      </div>
+                        <span className="text-[13px] md:text-[15px] font-bold text-white font-sans tracking-tight">{feature}</span>
+                      </motion.div>
                     ))}
                   </div>
 
-                  <p className="text-xs md:text-sm text-gray-300 font-sans leading-relaxed mb-8 max-w-sm">
-                    Actionable, strategic guidance across your entire digital landscape delivered by senior marketers.
+                  <p className="text-[13px] md:text-[14px] text-white/90 font-sans leading-relaxed mb-8 max-w-[400px] normal-case">
+                    Receive actionable, strategic guidance across your entire digital landscape delivered by senior marketers.
                   </p>
 
                   <div className="mt-auto flex flex-col md:flex-row md:items-end justify-between gap-6">
                     <motion.button 
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="bg-white text-black px-6 md:px-8 py-3 md:py-3.5 rounded-full flex items-center gap-2 text-[10px] md:text-sm font-black tracking-widest uppercase shadow-xl w-fit"
+                      className="bg-white text-black px-8 md:px-12 py-4 md:py-4.5 rounded-full flex items-center gap-3 text-[10px] md:text-xs font-black tracking-widest uppercase shadow-2xl w-fit whitespace-nowrap font-unbounded group"
                     >
                       LET'S CHAT
-                      <ArrowRight size={18} />
+                      <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                     </motion.button>
 
                     <div className="flex flex-col items-end">
