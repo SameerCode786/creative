@@ -4,7 +4,7 @@
  */
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Phone, Star } from "lucide-react";
+import { ArrowRight, Phone, Star, Search, Target, Cpu, Users } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
 export default function App() {
@@ -71,7 +71,7 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <main className="container mx-auto px-6 pt-32 pb-20 md:pt-48 md:px-12">
+      <main className="container mx-auto px-6 pt-32 pb-0 md:pt-48 md:px-12">
         <div className="max-w-6xl mx-auto">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -277,19 +277,19 @@ export default function App() {
           {/* CTA & Trust Badges Section */}
           <section className="mt-32 mb-5 relative flex flex-col items-center">
             {/* Radial Glow Effect */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1000px] h-[500px] bg-[#2f2441]/40 blur-[130px] rounded-full -z-10" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[900px] h-[500px] bg-[#2f2441]/60 blur-[110px] rounded-full -z-10" />
             
             <motion.button 
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="btn-gradient w-full max-w-[500px] py-7 rounded-full flex items-center justify-center gap-4 text-xs md:text-sm font-black tracking-[0.2em] uppercase mb-[10px] shadow-2xl shadow-orange-500/10"
+              className="btn-gradient w-full max-w-[500px] py-7 rounded-full flex items-center justify-center gap-4 text-xs md:text-sm font-black tracking-[0.2em] uppercase mb-10 md:mb-14 shadow-2xl shadow-orange-500/10"
             >
               Get 30 Min Free Consultation
               <ArrowRight size={20} />
             </motion.button>
 
             {/* Trust Badges Container */}
-            <div className="flex flex-wrap justify-center items-center gap-4 md:gap-5 px-4 w-full">
+            <div className="flex flex-wrap justify-center items-center gap-2.5 px-4 w-full">
               {[
                 { src: "https://framerusercontent.com/images/Wk9abNC6wrvbpFTvRBQEbZlHpBQ.svg", alt: "Semrush" },
                 { src: "https://framerusercontent.com/images/OiqLu1V7BGzaa3VAJAPFnyKivA.svg", alt: "HubSpot" },
@@ -308,29 +308,30 @@ export default function App() {
             </div>
           </section>
         </div>
+      </main>
 
-        {/* Infinite Scrolling Marquee */}
-        <div className="w-full mt-5 py-12 md:py-16 overflow-hidden relative border-t border-white/5">
+      {/* Infinite Scrolling Marquee */}
+      <div className="w-full py-12 md:py-16 overflow-hidden relative border-t border-white/5">
           <div className="flex whitespace-nowrap">
             <motion.div 
               initial={{ x: 0 }}
               animate={{ x: "-50%" }}
               transition={{ 
-                duration: 45, 
+                duration: 40, 
                 repeat: Infinity, 
                 ease: "linear" 
               }}
-              className="flex items-center gap-12 md:gap-24 pr-12 md:pr-24"
+              className="flex items-center gap-8 md:gap-16 pr-8 md:pr-16"
             >
               {[1, 2].map((group) => (
-                <div key={group} className="flex items-center gap-12 md:gap-24">
+                <div key={group} className="flex items-center gap-8 md:gap-16">
                   {["Website Design", "Content Marketing", "Digital Agency", "Digital Strategy"].map((item, index) => (
-                    <div key={index} className="flex items-center gap-12 md:gap-24">
+                    <div key={index} className="flex items-center gap-8 md:gap-16">
                       <span className="text-4xl md:text-[80px] font-normal font-unbounded text-white tracking-[-0.04em] uppercase leading-none">
                         {item}
                       </span>
                       <div className="flex items-center justify-center">
-                        <svg width="40" height="40" viewBox="0 0 100 100" className="text-white w-8 h-8 md:w-14 md:h-14 opacity-30">
+                        <svg width="40" height="40" viewBox="0 0 100 100" className="text-white w-6 h-6 md:w-12 md:h-12 opacity-30">
                           <path d="M50 0 L56 44 L100 50 L56 56 L50 100 L44 56 L0 50 L44 44 Z" fill="currentColor" />
                         </svg>
                       </div>
@@ -341,7 +342,131 @@ export default function App() {
             </motion.div>
           </div>
         </div>
-      </main>
+
+        {/* Stats Section */}
+        <section className="py-12 md:py-16 relative overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1000px] h-[400px] bg-[#2f2441]/20 blur-[130px] rounded-full -z-10" />
+          
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="flex flex-col md:flex-row items-center justify-center md:-space-x-20">
+              {[
+                { number: "10+", label: "Years of Experience" },
+                { number: "2000+", label: "Successful Projects" },
+                { number: "1900+", label: "Happy Clients" },
+                { number: "267+", label: "5 Star Reviews" },
+              ].map((stat, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: idx * 0.1 }}
+                  className={`w-48 h-48 md:w-56 md:h-56 rounded-full bg-[#453b56]/60 border border-white/20 backdrop-blur-3xl flex flex-col items-center justify-center text-center p-6 -mb-12 md:mb-0 relative group hover:bg-[#453b56]/80 transition-all duration-500 shadow-[0_0_50px_rgba(0,0,0,0.5)] ${
+                    idx % 2 === 1 ? 'md:-translate-y-6' : 'md:translate-y-6'
+                  }`}
+                  style={{ zIndex: idx }}
+                >
+                  <span className="text-4xl md:text-5xl font-bold font-sans tracking-tighter mb-1 text-white">{stat.number}</span>
+                  <p className="text-[10px] md:text-[12px] font-normal text-gray-200 uppercase tracking-[0.1em] font-sans max-w-[100px] leading-tight">
+                    {stat.label}
+                  </p>
+                  
+                  {/* Subtle rim light for the 'chain' effect */}
+                  <div className="absolute inset-0 rounded-full border-t border-l border-white/10 pointer-events-none" />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Our Best Services Section Wrapper */}
+        <div className="w-full bg-black">
+          <section className="py-32 max-w-6xl mx-auto px-6">
+            <div className="flex flex-col items-center text-center">
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full backdrop-blur-md mb-8"
+            >
+              <div className="w-4 h-4 rounded-sm border border-violet-400 rotate-45 flex items-center justify-center">
+                 <div className="w-1.5 h-1.5 bg-violet-400 rounded-full" />
+              </div>
+              <span className="text-[11px] font-bold tracking-[0.1em] text-gray-300 uppercase font-sans">Our Best Services</span>
+            </motion.div>
+
+            {/* Heading */}
+            <h3 className="font-unbounded text-4xl md:text-[56px] font-normal text-white mb-10 max-w-4xl leading-tight">
+              The Full Throttle Growth Engine
+            </h3>
+
+            {/* Intro Text */}
+            <p className="text-[20px] leading-[30px] text-gray-400 max-w-4xl font-sans mb-12">
+              Let’s be real, most "full-service" agencies in the USA are just collections of freelancers in a trench coat. We’re different. We’ve built a coordinated strike team that hits your market from every conceivable angle. Whether we’re rebuilding your digital storefront from the studs up or hunting down the top spot on Google, our approach is relentless, data-backed, and dare we say a little bit obsessed. We don’t just offer "services", we provide the high-caliber ammunition your brand needs to blow the competition out of the water.
+            </p>
+
+            {/* CTA Button */}
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="btn-gradient px-12 py-6 rounded-full flex items-center gap-3 text-sm font-black tracking-widest uppercase mb-24 shadow-2xl shadow-orange-500/20"
+            >
+              View All Services
+              <ArrowRight size={20} />
+            </motion.button>
+
+            {/* Services Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+              {[
+                {
+                  icon: <Search className="text-violet-400" size={32} />,
+                  title: "SEO (Search Engine Optimization)",
+                  description: "We don’t just \"rank\" websites; we occupy the digital high ground. Our team hunts down the most competitive keywords in the USA and dominates them, dragging your brand out of the shadows and onto page one. It’s high-velocity growth that turns searchers into loyal customers."
+                },
+                {
+                  icon: <Target className="text-orange-400" size={32} />,
+                  title: "Google Ads",
+                  description: "Why wait for the algorithm when you can jump the line? We build surgical PPC campaigns that hit your target audience right where they live. No wasted spend, no \"fluff\" metrics—just high-intent clicks and a relentless focus on your North American ROI."
+                },
+                {
+                  icon: <Cpu className="text-blue-400" size={32} />,
+                  title: "Website Design & Development",
+                  description: "A pretty site is useless if it doesn’t sell. We build high-performance digital storefronts that look stunning and convert like crazy. From sleek UX to lightning-fast backend code, we ensure your first impression is a knockout punch for every visitor."
+                },
+                {
+                  icon: <Users className="text-emerald-400" size={32} />,
+                  title: "Social Media Marketing",
+                  description: "Stop shouting into the void. We create thumb-stopping content that turns casual scrollers into a dedicated community. Whether it's TikTok trends or LinkedIn leadership, we manage your voice across the States to make sure your brand is the only one worth talking about."
+                }
+              ].map((service, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-b from-white/10 to-transparent border border-white/5 rounded-[40px] p-10 flex flex-col items-start text-left group hover:border-violet-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-violet-500/5 backdrop-blur-sm relative overflow-hidden"
+                >
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-violet-500/5 blur-[60px] rounded-full -z-10" />
+                  <div className="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                    {service.icon}
+                  </div>
+                  <h4 className="text-2xl font-bold text-white mb-4 group-hover:text-violet-300 transition-colors duration-500">{service.title}</h4>
+                  <p className="text-gray-400 font-sans leading-relaxed mb-8 flex-grow">
+                    {service.description}
+                  </p>
+                  <button className="flex items-center gap-2 text-sm font-bold tracking-widest uppercase text-white hover:text-violet-400 transition-colors group/btn">
+                    Learn More
+                    <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover/btn:border-violet-400/50 transition-colors">
+                      <ArrowRight size={16} className="group-hover/btn:translate-x-0.5 transition-transform" />
+                    </div>
+                  </button>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }
