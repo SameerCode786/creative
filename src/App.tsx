@@ -4,7 +4,7 @@
  */
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Phone, Star, Search, Target, Cpu, Users } from "lucide-react";
+import { ArrowRight, Phone, Star, Search, Target, Cpu, Users, CheckCircle2 } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
 export default function App() {
@@ -463,6 +463,125 @@ export default function App() {
                   </button>
                 </motion.div>
               ))}
+            </div>
+
+            {/* Feature Detailed Cards */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full mt-12">
+              {/* Card 1: Website Operations */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="relative min-h-[520px] rounded-[40px] overflow-hidden flex flex-col p-8 md:p-12 text-left group"
+              >
+                {/* Background Image */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                  style={{ backgroundImage: `url('https://framerusercontent.com/images/ZTUk0b5iK6nEA7yCLACn1LKtBjU.webp?scale-down-to=512&width=1285&height=1000')` }}
+                />
+                <div className="absolute inset-0 bg-black/50" />
+                
+                <div className="relative z-10 flex flex-col h-full">
+                  <h3 className="font-unbounded text-2xl md:text-3xl font-normal text-white mb-6 leading-tight">Website Operations</h3>
+                  
+                  <div className="space-y-3 mb-6">
+                    {[
+                      "We detect and resolve issues in real-time",
+                      "Direct access to human experts, not bots",
+                      "Hands-off updates for speed & security",
+                      "Secure daily snapshots at the edge",
+                      "Built-in ssl, caching, and advanced shields"
+                    ].map((feature, i) => (
+                      <div key={i} className="flex items-center gap-3">
+                        <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center border border-white/20">
+                          <CheckCircle2 size={12} className="text-white" />
+                        </div>
+                        <span className="text-sm text-gray-200 font-sans">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <p className="text-sm text-gray-300 font-sans leading-relaxed mb-8 max-w-sm">
+                    Keep your website running smoothly and performing at its best with our full-service maintenance solutions.
+                  </p>
+
+                  <div className="mt-auto flex flex-col md:flex-row md:items-end justify-between gap-6">
+                    <motion.button 
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="btn-gradient px-8 py-3.5 rounded-full flex items-center gap-2 text-sm font-black tracking-widest uppercase shadow-xl w-fit"
+                    >
+                      HIRE US
+                      <ArrowRight size={18} />
+                    </motion.button>
+
+                    <div className="flex flex-col items-end">
+                      <div className="flex gap-1 mb-1.5">
+                        {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="#fb923c" className="text-orange-400" />)}
+                      </div>
+                      <span className="text-base md:text-lg font-bold text-white italic">“Mindblowing Results.”</span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Card 2: Flexible Support */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="relative min-h-[520px] rounded-[40px] overflow-hidden flex flex-col p-8 md:p-12 text-left group"
+              >
+                {/* Background Image */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                  style={{ backgroundImage: `url('https://framerusercontent.com/images/OP253dOnpn7qMVBxez2GTl2oYeo.jpg?scale-down-to=1024&width=1200&height=900')` }}
+                />
+                <div className="absolute inset-0 bg-black/60" />
+                
+                <div className="relative z-10 flex flex-col h-full">
+                  <h3 className="font-unbounded text-2xl md:text-3xl font-normal text-white mb-6 leading-tight">Flexible Support, Scaled to You</h3>
+                  
+                  <div className="space-y-3 mb-6">
+                    {[
+                      "Strategic leadership rooted in performance",
+                      "Digital strategy, funnels & scalability roadmaps",
+                      "Budget stewardship, audits & creative direction",
+                      "Direct partnership with your internal or external teams",
+                      "Expert Email, SMS, CRM & CRO Execution"
+                    ].map((feature, i) => (
+                      <div key={i} className="flex items-center gap-3">
+                        <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center border border-white/20">
+                          <CheckCircle2 size={12} className="text-white" />
+                        </div>
+                        <span className="text-sm text-gray-200 font-sans">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <p className="text-sm text-gray-300 font-sans leading-relaxed mb-8 max-w-sm">
+                    Receive actionable, strategic guidance across your entire digital landscape — from ads and analytics to growth — delivered by marketers who’ve led at the highest level.
+                  </p>
+
+                  <div className="mt-auto flex flex-col md:flex-row md:items-end justify-between gap-6">
+                    <motion.button 
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="bg-white text-black px-8 py-3.5 rounded-full flex items-center gap-2 text-sm font-black tracking-widest uppercase shadow-xl w-fit"
+                    >
+                      LET'S CHAT
+                      <ArrowRight size={18} />
+                    </motion.button>
+
+                    <div className="flex flex-col items-end">
+                      <div className="flex gap-1 mb-1.5">
+                        {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="#fb923c" className="text-orange-400" />)}
+                      </div>
+                      <span className="text-base md:text-lg font-bold text-white text-right max-w-[280px]">"Clear strategy. Real movement. Proven results."</span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
