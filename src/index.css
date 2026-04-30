@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-heading: "Outfit", sans-serif;
+  --font-heading: "Unbounded", serif;
+  --font-unbounded: "Unbounded", sans-serif;
 }
 
 @layer base {
@@ -17,6 +18,10 @@
     background-image: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
                       url("data:image/svg+xml,%3Csvg width='60' height='100' viewBox='0 0 60 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20c0-11.046 8.954-20 20-20s20 8.954 20 20v60c0 11.046-8.954 20-20 20s-20-8.954-20-20V20z' fill-opacity='0.03' fill='%23ffffff' fill-rule='evenodd'/%3E%3C/svg%3E");
     background-attachment: fixed;
+  }
+
+  .header-shade {
+    background: linear-gradient(180deg, rgba(107, 77, 154, 0.7) 0%, rgba(107, 77, 154, 0.25) 35%, rgba(107, 77, 154, 0.1) 60%, transparent 100%);
   }
 
   .glass {
