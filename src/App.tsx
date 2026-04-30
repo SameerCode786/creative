@@ -187,32 +187,32 @@ export default function App() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="mt-16 md:mt-32 py-12 md:py-6 px-6 md:px-16 bg-[#0c0c0c]/30 rounded-[32px] md:rounded-full border-t border-[#654a91] flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20 max-w-4xl mx-auto backdrop-blur-2xl"
+            className="mt-16 md:mt-32 py-6 md:py-6 px-4 md:px-16 bg-[#0c0c0c]/30 rounded-full border-t border-[#654a91] flex flex-row items-center justify-center gap-4 sm:gap-10 md:gap-20 max-w-4xl mx-auto backdrop-blur-2xl"
           >
             {/* Google Reviews */}
-            <div className="shrink-0">
+            <div className="shrink-0 flex items-center justify-center">
               <img 
                 src="https://framerusercontent.com/images/fmhinA849mNotIjj65C3PSSHNQ.png?width=993&height=400" 
                 alt="Google Reviews" 
-                className="h-10 md:h-16 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="h-6 sm:h-10 md:h-16 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
               />
             </div>
 
             {/* Google Partner */}
-            <div className="shrink-0">
+            <div className="shrink-0 flex items-center justify-center">
               <img 
                 src="https://www.gstatic.com/partners/badge/images/2025/PartnerBadgeClickable.svg" 
                 alt="Google Partner" 
-                className="h-12 md:h-20 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="h-8 sm:h-12 md:h-20 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
               />
             </div>
 
             {/* Three Best Rated */}
-            <div className="shrink-0">
+            <div className="shrink-0 flex items-center justify-center">
               <img 
                 src="https://threebestrated.com/awards/advertising_agencies-newark-2025-drk.svg" 
                 alt="Three Best Rated" 
-                className="h-14 md:h-24 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="h-10 sm:h-14 md:h-24 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
               />
             </div>
           </motion.div>
