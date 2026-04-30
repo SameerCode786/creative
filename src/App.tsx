@@ -21,12 +21,23 @@ export default function App() {
   const navItems = ["HOME", "ABOUT", "SERVICES", "PROJECTS", "REVIEWS", "BLOG", "CONTACT"];
 
   return (
-    <div className="min-h-screen font-sans bg-pattern selection:bg-violet-500/30 overflow-x-hidden">
+    <div className="min-h-screen font-sans relative selection:bg-violet-500/30 overflow-x-hidden">
+      {/* Base Pattern Background */}
+      <div className="fixed inset-0 -z-50 bg-[#0a0a0a] bg-pattern opacity-100" />
+      
+      {/* Background Overlay Gradient (Requested Logic) */}
+      <div 
+        className="fixed inset-0 -z-40 pointer-events-none"
+        style={{ 
+          backgroundImage: 'linear-gradient(to bottom, black 0%, black 25%, transparent 45%, transparent 55%, black 75%, black 100%)' 
+        }} 
+      />
+
       {/* Top Gradient Shade - Initial State */}
       <motion.div 
         animate={{ opacity: isScrolled ? 0 : 1 }}
         style={{ pointerEvents: 'none' }}
-        className="fixed top-0 left-0 right-0 h-64 z-40 bg-gradient-to-b from-[#5b4384]/80 via-[#5b4384]/20 to-transparent" 
+        className="fixed top-0 left-0 right-0 h-80 z-40 bg-gradient-to-b from-[#654991]/90 via-[#654991]/30 to-transparent blur-[20px]" 
       />
 
       {/* Navigation */}
@@ -121,7 +132,7 @@ export default function App() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-unbounded text-[32px] sm:text-[40px] md:text-[70px] leading-[1.2] font-normal tracking-tighter mb-12 md:mb-20 text-gradient uppercase"
+            className="font-unbounded text-[32px] sm:text-[40px] md:text-[70px] leading-[1.2] font-normal tracking-tighter mb-12 md:mb-20 text-[#a390c5] drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] uppercase"
           >
             YOU&apos;VE FOUND THE TOP <br className="hidden md:block" />
             DIGITAL MARKETING <br className="hidden md:block" />
