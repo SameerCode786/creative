@@ -324,21 +324,21 @@ export default function App() {
           </section>
 
           {/* CTA & Trust Badges Section */}
-          <section className="mt-24 md:mt-32 mb-5 relative flex flex-col items-center">
-            {/* Radial Glow Effect */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[900px] h-[500px] bg-[#2f2441]/60 blur-[110px] rounded-full -z-10" />
+          <section className="mt-20 md:mt-28 mb-4 relative flex flex-col items-center">
+            {/* Soft Radial Glow behind CTA and Badges (requested #2e2340) */}
+            <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[850px] h-[450px] bg-[#2e2340]/40 blur-[90px] rounded-full -z-10" />
             
             <motion.button 
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="btn-gradient w-full max-w-[500px] py-6 md:py-7 rounded-full flex items-center justify-center gap-4 text-[11px] md:text-sm font-black tracking-[0.2em] uppercase mb-10 md:mb-14 shadow-2xl shadow-orange-500/20"
+              whileHover={{ scale: 1.01 }}
+              whileTap={{ scale: 0.99 }}
+              className="btn-gradient w-full max-w-[460px] py-4 md:py-5 rounded-full flex items-center justify-center gap-4 text-[10px] md:text-[11px] font-black tracking-[0.18em] uppercase mb-8 md:mb-10 shadow-2xl shadow-orange-600/10"
             >
               Get 30 Min Free Consultation
-              <ArrowRight size={20} />
+              <ArrowRight size={18} />
             </motion.button>
 
-            {/* Trust Badges Container */}
-            <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4 px-4 w-full">
+            {/* Trust Badges Container - Tighter alignment */}
+            <div className="flex flex-wrap justify-center items-center gap-2 md:gap-3 px-4 w-full">
               {[
                 { src: "https://framerusercontent.com/images/Wk9abNC6wrvbpFTvRBQEbZlHpBQ.svg", alt: "Semrush" },
                 { src: "https://framerusercontent.com/images/OiqLu1V7BGzaa3VAJAPFnyKivA.svg", alt: "HubSpot" },
@@ -346,11 +346,11 @@ export default function App() {
                 { src: "https://framerusercontent.com/images/P1K0vbIuFtj6qDOLBaFZJ5Vt0Zs.svg", alt: "Google Partner" },
                 { src: "https://framerusercontent.com/images/ylygHIGZLGQWdyEuzHn11SJt74.svg", alt: "MENA Search Awards" }
               ].map((logo, idx) => (
-                <div key={idx} className="bg-[#111111]/80 border border-white/5 p-4 md:py-7 rounded-[18px] md:rounded-[24px] flex items-center justify-center min-w-[100px] md:min-w-[180px] h-16 md:h-20 shadow-xl backdrop-blur-sm">
+                <div key={idx} className="bg-[#0f0f0f]/80 border border-white/5 px-4 py-3 md:px-8 md:py-4 rounded-[12px] md:rounded-[18px] flex items-center justify-center min-w-[90px] md:min-w-[150px] h-12 md:h-16 shadow-lg backdrop-blur-sm">
                   <img 
                     src={logo.src} 
                     alt={logo.alt} 
-                    className="h-6 md:h-10 w-auto object-contain brightness-110"
+                    className="h-4 md:h-7 w-auto object-contain brightness-90 contrast-125"
                   />
                 </div>
               ))}
@@ -359,28 +359,28 @@ export default function App() {
         </div>
       </main>
 
-      {/* Infinite Scrolling Marquee */}
-      <div className="w-full py-10 md:py-16 overflow-hidden relative border-y border-white/5 bg-black/40">
+      {/* Infinite Scrolling Marquee - Edge-to-edge, sitting tight, no BG */}
+      <div className="w-full pt-4 pb-12 md:pt-2 md:pb-16 overflow-hidden relative">
           <div className="flex whitespace-nowrap">
             <motion.div 
               initial={{ x: 0 }}
               animate={{ x: "-50%" }}
               transition={{ 
-                duration: 30, 
+                duration: 40, 
                 repeat: Infinity, 
                 ease: "linear" 
               }}
-              className="flex items-center gap-8 md:gap-16 pr-8 md:pr-16"
+              className="flex items-center gap-10 md:gap-20 pr-10 md:pr-20"
             >
               {[1, 2].map((group) => (
-                <div key={group} className="flex items-center gap-8 md:gap-16">
+                <div key={group} className="flex items-center gap-10 md:gap-20">
                   {["Website Design", "Content Marketing", "Digital Agency", "Digital Strategy"].map((item, index) => (
-                    <div key={index} className="flex items-center gap-8 md:gap-16">
-                      <span className="text-2xl sm:text-4xl md:text-[80px] font-normal font-unbounded text-white tracking-[-0.04em] uppercase leading-none opacity-80">
+                    <div key={index} className="flex items-center gap-10 md:gap-20">
+                      <span className="text-[32px] sm:text-4xl md:text-[64px] font-normal font-unbounded text-white tracking-[-0.04em] uppercase opacity-90">
                         {item}
                       </span>
                       <div className="flex items-center justify-center">
-                        <svg width="40" height="40" viewBox="0 0 100 100" className="text-white w-4 h-4 sm:w-6 sm:h-6 md:w-12 md:h-12 opacity-30">
+                        <svg width="40" height="40" viewBox="0 0 100 100" className="text-white w-5 h-5 sm:w-7 sm:h-7 md:w-12 md:h-12 opacity-40">
                           <path d="M50 0 L56 44 L100 50 L56 56 L50 100 L44 56 L0 50 L44 44 Z" fill="currentColor" />
                         </svg>
                       </div>
@@ -390,7 +390,7 @@ export default function App() {
               ))}
             </motion.div>
           </div>
-        </div>
+      </div>
 
         {/* Stats Section */}
         <section id="reviews" className="py-20 md:py-32 relative overflow-hidden">
