@@ -126,7 +126,7 @@ export default function App() {
             </div>
 
             {/* Right: Description & CTA */}
-            <div className="lg:col-span-7 flex flex-col gap-10 pt-16 lg:pt-20">
+            <div className="lg:col-span-7 flex flex-col gap-10 pt-10 lg:pt-14">
               <motion.p 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
