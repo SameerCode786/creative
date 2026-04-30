@@ -528,7 +528,7 @@ export default function App() {
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="relative min-h-[480px] md:min-h-[520px] rounded-[24px] md:rounded-[40px] overflow-hidden flex flex-col p-6 md:p-12 text-left group"
+                className="relative min-h-[480px] md:min-h-[520px] rounded-[32px] md:rounded-[48px] overflow-hidden flex flex-col p-8 md:p-14 text-left group shadow-[0_40px_80px_-20px_rgba(0,0,0,0.9)]"
               >
                 {/* Background Image */}
                 <div 
@@ -539,7 +539,7 @@ export default function App() {
                 <div className="relative z-10 flex flex-col h-full uppercase">
                   <h3 className="font-unbounded text-xl md:text-[34px] font-normal text-white mb-6 leading-tight">Website Operations</h3>
                   
-                  <div className="space-y-4 md:space-y-4 mb-4 md:mb-6">
+                  <div className="space-y-4 md:space-y-4 mb-2 md:mb-2">
                     {[
                       "We detect and resolve issues in real-time",
                       "Direct access to human experts, not bots",
@@ -563,7 +563,7 @@ export default function App() {
                     ))}
                   </div>
 
-                  <p className="text-[13px] md:text-[14px] text-white/90 font-sans leading-relaxed mb-8 max-w-[320px] normal-case">
+                  <p className="text-[13px] md:text-[14px] text-white/90 font-sans leading-relaxed mb-4 max-w-[320px] normal-case">
                     Keep your website running smoothly and performing at its best with our full-service maintenance solutions.
                   </p>
 
@@ -581,7 +581,7 @@ export default function App() {
                       <div className="flex gap-1 mb-1.5">
                         {[...Array(5)].map((_, i) => <Star key={i} size={12} md:size={14} fill="#fb923c" className="text-orange-400" />)}
                       </div>
-                      <span className="text-[15px] md:text-lg font-bold text-white italic">“Mindblowing Results.”</span>
+                      <span className="text-[14px] md:text-[16px] font-bold text-black italic">“Mindblowing Results.”</span>
                     </div>
                   </div>
                 </div>
@@ -603,7 +603,7 @@ export default function App() {
                 <div className="relative z-10 flex flex-col h-full uppercase">
                   <h3 className="font-unbounded text-xl md:text-[34px] font-normal text-white mb-6 leading-tight">Flexible Support, Scaled to You</h3>
                   
-                  <div className="space-y-4 md:space-y-4 mb-4 md:mb-6">
+                  <div className="space-y-4 md:space-y-4 mb-2 md:mb-2">
                     {[
                       "Strategic leadership rooted in performance",
                       "Digital strategy, funnels & scalability roadmaps",
@@ -627,7 +627,7 @@ export default function App() {
                     ))}
                   </div>
 
-                  <p className="text-[13px] md:text-[14px] text-white/90 font-sans leading-relaxed mb-8 max-w-[400px] normal-case">
+                  <p className="text-[13px] md:text-[14px] text-white/90 font-sans leading-relaxed mb-4 max-w-[400px] normal-case">
                     Receive actionable, strategic guidance across your entire digital landscape delivered by senior marketers.
                   </p>
 
@@ -645,7 +645,9 @@ export default function App() {
                       <div className="flex gap-1 mb-1.5">
                         {[...Array(5)].map((_, i) => <Star key={i} size={12} md:size={14} fill="#fb923c" className="text-orange-400" />)}
                       </div>
-                      <span className="text-sm md:text-lg font-bold text-white text-right max-w-[280px]">"Proven results. Real movement."</span>
+                      <span className="text-[14px] md:text-[16px] font-bold text-black text-right max-w-[220px] leading-tight italic">
+                        "Clear strategy. Real<br/>movement. Proven results."
+                      </span>
                     </div>
                   </div>
                 </div>
