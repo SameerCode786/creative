@@ -359,28 +359,31 @@ export default function App() {
         </div>
       </main>
 
-      {/* Infinite Scrolling Marquee - Edge-to-edge, sitting tight, no BG */}
-      <div className="w-full pt-4 pb-12 md:pt-2 md:pb-16 overflow-hidden relative">
-          <div className="flex whitespace-nowrap">
+      {/* Infinite Scrolling Marquee - Slimmer, cleaner, light-background touch */}
+      <div className="w-full py-1.5 md:py-3 overflow-hidden relative bg-[#0a0a0a]">
+          {/* Subtle horizontal glow behind text - "thorathora light color" */}
+          <div className="absolute inset-0 bg-linear-to-r from-transparent via-violet-500/5 to-transparent pointer-events-none" />
+          
+          <div className="flex whitespace-nowrap relative z-10">
             <motion.div 
               initial={{ x: 0 }}
               animate={{ x: "-50%" }}
               transition={{ 
-                duration: 40, 
+                duration: 35, 
                 repeat: Infinity, 
                 ease: "linear" 
               }}
-              className="flex items-center gap-10 md:gap-20 pr-10 md:pr-20"
+              className="flex items-center gap-12 md:gap-24 pr-12 md:pr-24"
             >
               {[1, 2].map((group) => (
-                <div key={group} className="flex items-center gap-10 md:gap-20">
+                <div key={group} className="flex items-center gap-12 md:gap-24">
                   {["Website Design", "Content Marketing", "Digital Agency", "Digital Strategy"].map((item, index) => (
-                    <div key={index} className="flex items-center gap-10 md:gap-20">
-                      <span className="text-[32px] sm:text-4xl md:text-[64px] font-normal font-unbounded text-white tracking-[-0.04em] uppercase opacity-90">
+                    <div key={index} className="flex items-center gap-12 md:gap-24">
+                      <span className="text-xl sm:text-3xl md:text-[42px] font-normal font-unbounded text-white tracking-[-0.03em] uppercase opacity-95">
                         {item}
                       </span>
                       <div className="flex items-center justify-center">
-                        <svg width="40" height="40" viewBox="0 0 100 100" className="text-white w-5 h-5 sm:w-7 sm:h-7 md:w-12 md:h-12 opacity-40">
+                        <svg width="40" height="40" viewBox="0 0 100 100" className="text-white w-4 h-4 sm:w-6 md:w-10 opacity-40">
                           <path d="M50 0 L56 44 L100 50 L56 56 L50 100 L44 56 L0 50 L44 44 Z" fill="currentColor" />
                         </svg>
                       </div>
@@ -657,14 +660,17 @@ export default function App() {
         </section>
       </div>
 
-      {/* New Section: Conversion-Focused Design Marquee */}
-      <div className="w-full py-10 md:py-16 overflow-hidden relative border-t border-white/5 bg-[#0a0a0a] bg-pattern">
-        <div className="flex whitespace-nowrap">
+      {/* New Section: Conversion-Focused Design Marquee - Ultra Slim & Dark */}
+      <div className="w-full py-2 md:py-4 overflow-hidden relative bg-black">
+        {/* Subtle horizontal glow behind text */}
+        <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/5 to-transparent pointer-events-none" />
+        
+        <div className="flex whitespace-nowrap relative z-10">
           <motion.div 
             initial={{ x: 0 }}
             animate={{ x: "-50%" }}
             transition={{ 
-              duration: 35, 
+              duration: 50, 
               repeat: Infinity, 
               ease: "linear" 
             }}
@@ -674,7 +680,7 @@ export default function App() {
               <div key={group} className="flex items-center gap-8 md:gap-16">
                 {["Conversion-Focused Design", "Conversion-Focused Design", "Conversion-Focused Design"].map((item, index) => (
                   <div key={index} className="flex items-center gap-8 md:gap-16">
-                    <span className="text-3xl sm:text-4xl md:text-[80px] font-normal font-unbounded text-white tracking-[-0.04em] uppercase leading-none opacity-90">
+                    <span className="text-3xl sm:text-4xl md:text-[80px] font-normal font-unbounded text-white tracking-[-0.04em] uppercase leading-none opacity-95">
                       {item}
                     </span>
                     <div className="flex items-center justify-center">
@@ -690,17 +696,17 @@ export default function App() {
         </div>
       </div>
 
-      {/* Large Gallery Image Section */}
-      <section id="projects" className="bg-[#0a0a0a] bg-pattern pb-16 md:pb-32 px-4 md:px-6">
-        <div className="max-w-[1400px] mx-auto overflow-hidden rounded-[24px] md:rounded-[40px] shadow-[0_30px_100px_rgba(0,0,0,0.8)] border border-white/5">
+      {/* Large Gallery Image Section - Edge to Edge 100% Width */}
+      <section id="projects" className="bg-black">
+        <div className="w-full overflow-hidden">
           <motion.img 
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1 }}
             src="https://framerusercontent.com/images/cZSRzq0SOyVgW917zjEMq8OWk.webp?width=1920&height=1080" 
             alt="Conversion-Focused Design Portfolio" 
-            className="w-full h-auto object-cover min-h-[300px]"
+            className="w-full h-auto object-cover"
           />
         </div>
       </section>
