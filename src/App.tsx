@@ -105,7 +105,7 @@ export default function App() {
                 <p className="text-[12px] font-normal tracking-[0.1em] mb-0 text-white/80 uppercase font-sans px-2">
                   Our Clients Love Working With Us
                 </p>
-                <div className="h-px w-full bg-white/10 mt-[8px] mb-[12px]" />
+                <div className="h-px w-full bg-white/10 mt-[5px] mb-[5px]" />
                 <div className="flex items-center gap-4 px-2">
                   <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center p-2 shrink-0">
                     <svg viewBox="0 0 24 24" className="w-full h-full fill-current text-[#4285F4]">
@@ -126,7 +126,7 @@ export default function App() {
             </div>
 
             {/* Right: Description & CTA */}
-            <div className="lg:col-span-7 flex flex-col gap-10 pt-24 lg:pt-40">
+            <div className="lg:col-span-7 flex flex-col gap-10 pt-16 lg:pt-20">
               <motion.p 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -152,43 +152,127 @@ export default function App() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="mt-32 p-8 glass rounded-[40px] md:rounded-full border-white/5 flex flex-col md:flex-row items-center justify-center gap-12 max-w-5xl mx-auto backdrop-blur-2xl"
+            className="mt-32 py-4 md:py-6 px-10 md:px-16 bg-black/30 rounded-full border-t border-[#654a91] flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 max-w-4xl mx-auto backdrop-blur-2xl"
           >
-            <div className="flex items-center gap-4 shrink-0 scale-110">
-              <span className="text-blue-500 font-bold text-xl font-sans">Google</span>
-              <div className="flex flex-col">
-                <div className="flex gap-0.5">
-                  {[1,2,3,4,5].map(i => <Star key={i} size={11} fill="#fbbf24" className="text-amber-400" />)}
-                </div>
-                <span className="text-[10px] font-bold tracking-tighter uppercase font-sans">Reviews</span>
-              </div>
-            </div>
-
-            <div className="hidden md:block h-10 w-px bg-white/10" />
-
-            <div className="flex items-center gap-3 shrink-0 scale-110">
+            {/* Google Reviews */}
+            <div className="shrink-0">
               <img 
-                src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" 
-                alt="Google Partner" 
-                className="h-5 opacity-90"
+                src="https://framerusercontent.com/images/fmhinA849mNotIjj65C3PSSHNQ.png?width=993&height=400" 
+                alt="Google Reviews" 
+                className="h-12 md:h-16 w-auto"
               />
-              <span className="text-[12px] font-bold text-gray-400 uppercase tracking-tighter font-sans">Partner</span>
             </div>
 
-            <div className="hidden md:block h-10 w-px bg-white/10" />
+            {/* Google Partner */}
+            <div className="shrink-0">
+              <img 
+                src="https://www.gstatic.com/partners/badge/images/2025/PartnerBadgeClickable.svg" 
+                alt="Google Partner" 
+                className="h-14 md:h-20 w-auto"
+              />
+            </div>
 
-            <div className="flex items-center gap-3 shrink-0 scale-110">
-              <div className="relative w-12 h-12 flex items-center justify-center">
-                  <div className="absolute inset-0 border-2 border-amber-400/50 rounded-full animate-[spin_10s_linear_infinite]" />
-                  <Star size={20} fill="#fbbf24" className="text-amber-400" />
-              </div>
-              <div className="flex flex-col font-sans">
-                <span className="text-[9px] font-bold uppercase leading-none">Best</span>
-                <span className="text-[9px] font-bold uppercase leading-none">Agency</span>
-                <span className="text-[9px] font-bold uppercase leading-none">2024</span>
-              </div>
+            {/* Three Best Rated */}
+            <div className="shrink-0">
+              <img 
+                src="https://threebestrated.com/awards/advertising_agencies-newark-2025-drk.svg" 
+                alt="Three Best Rated" 
+                className="h-16 md:h-24 w-auto"
+              />
             </div>
           </motion.div>
+
+          {/* Our Story Section */}
+          <section className="mt-[60px] grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            {/* Left side: Graphic Image */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 1 }}
+              whileInView={{ opacity: 1, scale: 1.15 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative w-full lg:-ml-16 flex justify-center"
+            >
+              <img 
+                src="https://framerusercontent.com/images/PxRhqFuVPHYeB6S8CNV2ylqx3SM.png?width=1000&height=1000" 
+                alt="Digital Marketing Strategy Graphic" 
+                className="w-full md:w-[120%] lg:w-[130%] h-auto max-h-[700px] drop-shadow-[0_30px_70px_rgba(0,0,0,0.7)] object-contain"
+              />
+            </motion.div>
+
+            {/* Right side: Content */}
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="flex flex-col items-start gap-8"
+            >
+              {/* Badge */}
+              <div className="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full backdrop-blur-md">
+                <div className="w-4 h-4 rounded-sm border border-violet-400 rotate-45 flex items-center justify-center">
+                   <div className="w-1.5 h-1.5 bg-violet-400 rounded-full" />
+                </div>
+                <span className="text-[11px] font-bold tracking-[0.1em] text-gray-300 uppercase font-sans">Our Story</span>
+              </div>
+
+              {/* Heading */}
+              <h3 className="font-unbounded text-[40px] leading-[48px] font-normal text-white">
+                The Team Behind <br /> the Results
+              </h3>
+
+              {/* Paragraphs */}
+              <div className="space-y-8 font-sans text-[20px] leading-[30px] font-normal text-gray-300">
+                <p>
+                  With a powerhouse team of over 50 specialists based in the United States, we provide cutting-edge digital marketing strategies to a diverse portfolio of 400+ American businesses. As the top-rated SEO agency on Google, we maintain a stellar 5-star rating backed by more than 450 verified client reviews.
+                </p>
+                <p>
+                  Statistics are great, but what actually matters is your ROI. Our mission is straightforward: we amplify your online visibility to directly increase your revenue. We don't just promise results; we deliver them. By navigating the most competitive search landscapes in the country, we've generated millions in additional profit for our partners, moving them from page ten to the #1 spot.
+                </p>
+              </div>
+            </motion.div>
+          </section>
+
+          {/* End-to-End Solutions Section */}
+          <section className="mt-40 grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            {/* Left side: Content */}
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="flex flex-col items-start gap-8 order-2 lg:order-1"
+            >
+              {/* Heading */}
+              <h3 className="font-unbounded text-[40px] leading-[48px] font-normal text-white">
+                End-to-End Solutions
+              </h3>
+
+              {/* Paragraphs */}
+              <div className="space-y-8 font-sans text-[20px] leading-[30px] font-normal text-gray-300">
+                <p>
+                  <strong>Our Methodology</strong> Claiming to master every facet of the search landscape is a big swing, but it’s one we knock out of the park daily. We operate like a pack of wolves, attacking your competition from every possible flank. We leave no stone unturned (metaphorically, of course the lack of opposable thumbs makes the literal version a struggle for wolves).
+                </p>
+                <p>
+                  From deep-layer technical SEO and content marketing to precision on-page optimization, we do it all. As leaders in the American SEO space, we’re already deploying the next-gen strategies other agencies are still trying to figure out. Don’t just take our word for it check out the data to your right to see why we are a top-tier SEO firm in the USA.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Right side: Graphic Image */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 1 }}
+              whileInView={{ opacity: 1, scale: 1.1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative w-full lg:-mr-16 flex justify-center order-1 lg:order-2"
+            >
+              <img 
+                src="https://framerusercontent.com/images/P5Phd2iqkZFkXruboeXHhT8Pgg.png?width=1000&height=1000" 
+                alt="End-to-End Solutions Graphic" 
+                className="w-full md:w-[120%] lg:w-[130%] h-auto max-h-[700px] drop-shadow-[0_30px_70px_rgba(0,0,0,0.7)] object-contain"
+              />
+            </motion.div>
+          </section>
         </div>
       </main>
     </div>
