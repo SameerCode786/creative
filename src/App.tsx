@@ -25,25 +25,28 @@ export default function App() {
       {/* Base Pattern Background */}
       <div className="fixed inset-0 -z-50 bg-[#0a0a0a] bg-pattern opacity-100" />
       
-      {/* Background Overlay Gradient (Requested Logic) */}
+      {/* Background Overlay Gradient (4-Way Vignette) */}
       <div 
         className="fixed inset-0 -z-40 pointer-events-none"
         style={{ 
-          backgroundImage: 'linear-gradient(to bottom, black 0%, black 25%, transparent 45%, transparent 55%, black 75%, black 100%)' 
+          backgroundImage: `
+            linear-gradient(to bottom, black 0%, black 15%, transparent 40%, transparent 60%, black 85%, black 100%),
+            linear-gradient(to right, black 0%, transparent 10%, transparent 90%, black 100%)
+          `
         }} 
       />
 
-      {/* Top Gradient Shade - Initial State */}
+      {/* Top Gradient Shade - Pixel Perfect refinement for Image 2 */}
       <motion.div 
         animate={{ opacity: isScrolled ? 0 : 1 }}
         style={{ pointerEvents: 'none' }}
-        className="fixed top-0 left-0 right-0 h-80 z-40 bg-gradient-to-b from-[#654991]/90 via-[#654991]/30 to-transparent blur-[20px]" 
+        className="fixed top-0 left-0 right-0 h-32 z-40 bg-[#654991]/90 blur-[40px] -translate-y-4" 
       />
 
       {/* Navigation */}
       <nav 
         className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-4 md:px-12 transition-all duration-300 ${
-          isScrolled ? "bg-[#0a0a0a]/90 backdrop-blur-lg border-b border-white/5 py-3" : "bg-transparent py-4 md:py-6"
+          isScrolled ? "bg-[#0a0a0a]/90 backdrop-blur-lg border-b border-white/5 py-3" : "bg-transparent py-4 md:py-8"
         }`}
       >
         {/* Logo */}
