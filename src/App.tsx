@@ -93,22 +93,21 @@ export default function App() {
             AGENCY
           </motion.h1>
 
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-24 items-start -mt-4 mt-[-10px]">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-24 items-start -mt-4">
             {/* Left Box: Reviews Card */}
             <div className="lg:col-span-5 flex flex-col items-start pt-2">
               <motion.div 
                 initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="bg-black/40 backdrop-blur-xl p-8 rounded-[40px] border border-white/5 shadow-2xl relative overflow-hidden group w-full max-w-[420px]"
+                className="bg-[#0a0a0a] p-8 rounded-[40px] shadow-[0_10px_40px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.05)] relative overflow-hidden group w-full max-w-[420px]"
               >
-                <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
-                <p className="text-[11px] font-medium tracking-[0.15em] mb-6 text-gray-100 uppercase font-sans">
+                <p className="text-[11px] font-normal tracking-[0.2em] mb-4 text-white/90 uppercase font-sans">
                   Our Clients Love Working With Us
                 </p>
-                <div className="h-px w-full bg-white/5 mb-6" />
+                <div className="h-px w-full bg-white/10 mb-8" />
                 <div className="flex items-center gap-5">
-                  <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center p-2.5 shrink-0 shadow-xl">
+                  <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center p-2.5 shrink-0 shadow-lg">
                     <svg viewBox="0 0 24 24" className="w-full h-full fill-current text-[#4285F4]">
                       <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
                       <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
@@ -127,12 +126,12 @@ export default function App() {
             </div>
 
             {/* Right: Description & CTA */}
-            <div className="lg:col-span-7 flex flex-col gap-10 pt-4">
+            <div className="lg:col-span-7 flex flex-col gap-10 pt-20 lg:pt-32">
               <motion.p 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="text-[20px] text-gray-200 leading-[30px] font-normal font-sans"
+                className="text-[20px] text-gray-200 leading-[1.6] font-normal font-sans"
               >
                 Most agencies are great at sending monthly reports full of &ldquo;vanity metrics&rdquo; that don&apos;t pay the bills. We&apos;re different. We operate like a pack of wolves - calculated, aggressive, and hitting your market from every possible angle to ensure your competitors never see you coming.
               </motion.p>
