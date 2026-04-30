@@ -100,14 +100,14 @@ export default function App() {
                 initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="bg-[#0a0a0a] p-8 rounded-[40px] shadow-[0_10px_40px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.05)] relative overflow-hidden group w-full max-w-[420px]"
+                className="bg-[#0c0c0c] p-6 rounded-[32px] shadow-[0_25px_50px_rgba(0,0,0,0.8)] relative overflow-hidden group w-full max-w-[380px]"
               >
-                <p className="text-[11px] font-normal tracking-[0.2em] mb-4 text-white/90 uppercase font-sans">
+                <p className="text-[12px] font-normal tracking-[0.1em] mb-0 text-white/80 uppercase font-sans px-2">
                   Our Clients Love Working With Us
                 </p>
-                <div className="h-px w-full bg-white/10 mb-8" />
-                <div className="flex items-center gap-5">
-                  <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center p-2.5 shrink-0 shadow-lg">
+                <div className="h-px w-full bg-white/10 mt-[8px] mb-[12px]" />
+                <div className="flex items-center gap-4 px-2">
+                  <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center p-2 shrink-0">
                     <svg viewBox="0 0 24 24" className="w-full h-full fill-current text-[#4285F4]">
                       <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
                       <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
@@ -116,17 +116,17 @@ export default function App() {
                     </svg>
                   </div>
                   <div>
-                    <div className="flex gap-1 mb-1.5">
-                      {[1, 2, 3, 4, 5].map(i => <Star key={i} size={13} fill="#fbbf24" className="text-amber-400" />)}
+                    <div className="flex gap-1 mb-1">
+                      {[1, 2, 3, 4, 5].map(i => <Star key={i} size={11} fill="#fbbf24" className="text-amber-400" />)}
                     </div>
-                    <p className="text-base font-bold text-white font-sans">267+ 5 Star Reviews</p>
+                    <p className="text-sm font-bold text-white font-sans">267+ 5 Star Reviews</p>
                   </div>
                 </div>
               </motion.div>
             </div>
 
             {/* Right: Description & CTA */}
-            <div className="lg:col-span-7 flex flex-col gap-10 pt-20 lg:pt-32">
+            <div className="lg:col-span-7 flex flex-col gap-10 pt-24 lg:pt-40">
               <motion.p 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
