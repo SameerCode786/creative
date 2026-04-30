@@ -591,7 +591,7 @@ export default function App() {
       </div>
 
       {/* New Section: Conversion-Focused Design Marquee */}
-      <div className="w-full py-12 md:py-16 overflow-hidden relative border-t border-white/5 bg-black bg-pattern-dark">
+      <div className="w-full py-12 md:py-16 overflow-hidden relative border-t border-white/5 bg-[#0a0a0a] bg-pattern">
         <div className="flex whitespace-nowrap">
           <motion.div 
             initial={{ x: 0 }}
@@ -624,7 +624,7 @@ export default function App() {
       </div>
 
       {/* Large Gallery Image Section */}
-      <section className="bg-black bg-pattern-dark pb-24 md:pb-32 px-6">
+      <section className="bg-[#0a0a0a] bg-pattern pb-24 md:pb-32 px-6">
         <div className="max-w-[1400px] mx-auto overflow-hidden rounded-[40px] shadow-[0_30px_100px_rgba(0,0,0,0.8)] border border-white/5">
           <motion.img 
             initial={{ opacity: 0, y: 50 }}
