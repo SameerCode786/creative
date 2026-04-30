@@ -42,6 +42,6 @@
   }
 
   .btn-gradient {
-    @apply bg-linear-to-r from-violet-600 to-orange-500 hover:from-violet-500 hover:to-orange-400 transition-all duration-300;
+    @apply bg-linear-to-r from-violet-600 to-orange-500 hover:bg-none hover:bg-[#7454a8] transition-all duration-300;
   }
 }

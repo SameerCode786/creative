@@ -392,12 +392,19 @@ export default function App() {
           </div>
       </div>
 
-        {/* Stats Section */}
-        <section id="reviews" className="py-20 md:py-32 relative overflow-hidden">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1000px] h-[300px] bg-[#2f2441]/20 blur-[130px] rounded-full -z-10" />
+        {/* Stats Section - Pixel Perfect Spotlight Layout */}
+        <section id="reviews" className="py-12 md:py-16 relative w-full overflow-hidden">
+          {/* Spotlight Vignette: Black at edges, transparent in center */}
+          <div 
+            className="absolute inset-0 pointer-events-none -z-10"
+            style={{ 
+              backgroundImage: 'linear-gradient(to right, black 0%, transparent 40%, transparent 60%, black 100%)' 
+            }} 
+          />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#654991]/20 blur-[100px] rounded-full -z-20" />
           
-          <div className="max-w-6xl mx-auto px-4 md:px-6">
-            <div className="grid grid-cols-2 md:flex md:flex-row items-center justify-center gap-4 sm:gap-8 md:-space-x-12">
+          <div className="max-w-4xl mx-auto px-4 overflow-x-auto no-scrollbar">
+            <div className="flex flex-row items-center justify-center -space-x-6 sm:-space-x-10 md:-space-x-14 min-w-max pb-4">
               {[
                 { number: "10+", label: "Years of Experience" },
                 { number: "2000+", label: "Successful Projects" },
@@ -406,22 +413,22 @@ export default function App() {
               ].map((stat, idx) => (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, scale: 0.8 }}
+                  initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: idx * 0.1 }}
-                  className={`w-full aspect-square max-w-[160px] md:w-52 md:h-52 rounded-full bg-[#453b56]/80 border border-white/20 backdrop-blur-3xl flex flex-col items-center justify-center text-center p-4 relative group hover:bg-[#453b56] transition-all duration-500 shadow-2xl ${
-                    idx % 2 === 1 ? 'md:-translate-y-8' : 'md:translate-y-8'
-                  }`}
+                  className="w-32 h-32 sm:w-44 sm:h-44 md:w-56 md:h-56 rounded-full bg-[#72618d]/40 border border-white/10 backdrop-blur-xl flex flex-col items-center justify-center text-center p-4 relative group hover:bg-[#72618d]/60 transition-all duration-300 shadow-[0_10px_40px_rgba(0,0,0,0.3)]"
                   style={{ zIndex: idx }}
                 >
-                  <span className="text-3xl md:text-5xl font-bold font-sans tracking-tighter mb-1 text-white">{stat.number}</span>
-                  <p className="text-[9px] md:text-[11px] font-normal text-gray-200 uppercase tracking-[0.1em] font-sans max-w-[90px] leading-tight">
+                  <p className="font-unbounded text-lg sm:text-2xl md:text-[42px] font-bold text-white leading-none mb-1 md:mb-2">
+                    {stat.number}
+                  </p>
+                  <p className="text-[7px] sm:text-[9px] md:text-[11px] font-medium text-white/90 uppercase tracking-wider font-sans max-w-[80px] sm:max-w-[100px] md:max-w-[120px] leading-[1.2]">
                     {stat.label}
                   </p>
                   
-                  {/* Glowing rim */}
-                  <div className="absolute inset-0 rounded-full border-t-2 border-l-2 border-white/30 pointer-events-none opacity-40 group-hover:opacity-70 transition-opacity" />
+                  {/* Subtle highlight rim */}
+                  <div className="absolute inset-0 rounded-full border-t border-white/20 pointer-events-none" />
                 </motion.div>
               ))}
             </div>
@@ -433,7 +440,7 @@ export default function App() {
           {/* Central Atmospheric Glow */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1000px] h-[800px] bg-violet-600/5 blur-[160px] rounded-full pointer-events-none" />
           
-          <section className="py-20 md:py-32 max-w-6xl mx-auto px-4 md:px-6 relative z-10">
+          <section className="pt-10 pb-20 md:pt-12 md:pb-32 max-w-6xl mx-auto px-4 md:px-6 relative z-10">
             <div className="flex flex-col items-center text-center">
             {/* Badge */}
             <motion.div
