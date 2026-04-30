@@ -22,13 +22,15 @@ export default function App() {
         </div>
 
         {/* Center Nav - Pill */}
-        <div className="hidden lg:flex items-center glass rounded-full px-2 py-1">
+        <div className="hidden lg:flex items-center bg-[#0d0d0d]/90 border border-white/5 rounded-full px-1.5 py-1">
           {["HOME", "ABOUT", "SERVICES", "PROJECTS", "REVIEWS", "BLOG", "CONTACT"].map((item, idx) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              className={`px-5 py-2 text-xs font-semibold tracking-wider transition-colors hover:text-violet-400 ${
-                idx === 0 ? "bg-white/10 rounded-full text-white" : "text-gray-400"
+              className={`px-5 py-2 text-[11px] font-bold tracking-widest transition-all duration-300 ${
+                idx === 0 
+                  ? "bg-[#1a1a1a] text-violet-400 shadow-[0_0_20px_rgba(139,92,246,0.2)] rounded-full" 
+                  : "text-gray-400 hover:text-white"
               }`}
             >
               {item}
@@ -38,9 +40,9 @@ export default function App() {
 
         {/* Right CTA */}
         <div className="flex items-center">
-          <button className="flex items-center gap-2 px-6 py-2.5 text-sm font-bold bg-violet-600/80 hover:bg-violet-600 rounded-full glass transition-all">
-            <span className="hidden sm:inline">(973) 563-1729</span>
-            <Phone size={16} />
+          <button className="flex items-center gap-2 px-6 py-2 text-sm font-bold border border-white/20 rounded-full hover:bg-white/5 transition-all">
+            <span className="hidden sm:inline text-gray-100">(973) 563-1729</span>
+            <Phone size={14} className="text-gray-400" />
           </button>
         </div>
       </nav>
@@ -119,53 +121,52 @@ export default function App() {
               </motion.button>
             </div>
           </div>
+
+          {/* Social Proof (Moved here) */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="mt-20 glass rounded-3xl md:rounded-full px-8 py-6 md:py-4 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 max-w-4xl mx-auto"
+          >
+            <div className="flex items-center gap-3 shrink-0">
+              <span className="text-blue-500 font-bold text-lg">Google</span>
+              <div className="flex flex-col">
+                <div className="flex gap-0.5">
+                  {[1,2,3,4,5].map(i => <Star key={i} size={10} fill="#fbbf24" className="text-amber-400" />)}
+                </div>
+                <span className="text-[8px] font-bold tracking-tighter uppercase">Reviews</span>
+              </div>
+            </div>
+
+            <div className="hidden md:block h-8 w-px bg-white/10" />
+
+            <div className="flex items-center gap-2 shrink-0">
+              <img 
+                src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" 
+                alt="Google Partner" 
+                className="h-4 opacity-80"
+              />
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-tighter">Partner</span>
+            </div>
+
+            <div className="hidden md:block h-8 w-px bg-white/10" />
+
+            <div className="flex items-center gap-2 shrink-0">
+              <div className="relative w-10 h-10 flex items-center justify-center">
+                  <div className="absolute inset-0 border-2 border-amber-400/50 rounded-full animate-[spin_10s_linear_infinite]" />
+                  <Star size={18} fill="#fbbf24" className="text-amber-400" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[8px] font-bold uppercase leading-none">Best</span>
+                <span className="text-[8px] font-bold uppercase leading-none">Agency</span>
+                <span className="text-[8px] font-bold uppercase leading-none">2024</span>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </main>
 
-      {/* Footer Social Proof */}
-      <footer className="fixed bottom-10 left-1/2 -translate-x-1/2 w-full max-w-2xl px-6 z-40">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="glass rounded-full px-8 py-4 flex items-center justify-around gap-8"
-        >
-          <div className="flex items-center gap-3 shrink-0">
-            <span className="text-blue-500 font-bold text-lg">Google</span>
-            <div className="flex flex-col">
-              <div className="flex gap-0.5">
-                {[1,2,3,4,5].map(i => <Star key={i} size={10} fill="#fbbf24" className="text-amber-400" />)}
-              </div>
-              <span className="text-[8px] font-bold tracking-tighter">Reviews</span>
-            </div>
-          </div>
-
-          <div className="h-8 w-px bg-white/10" />
-
-          <div className="flex items-center gap-2 shrink-0">
-            <img 
-              src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" 
-              alt="Google Partner" 
-              className="h-4 opacity-80"
-            />
-            <span className="text-[10px] font-bold text-gray-400">Partner</span>
-          </div>
-
-          <div className="h-8 w-px bg-white/10" />
-
-          <div className="flex items-center gap-2 shrink-0">
-             <div className="relative w-10 h-10 flex items-center justify-center">
-                <div className="absolute inset-0 border-2 border-amber-400/50 rounded-full animate-[spin_10s_linear_infinite]" />
-                <Star size={18} fill="#fbbf24" className="text-amber-400" />
-             </div>
-             <div className="flex flex-col">
-               <span className="text-[8px] font-bold uppercase leading-none">Best</span>
-               <span className="text-[8px] font-bold uppercase leading-none">Agency</span>
-               <span className="text-[8px] font-bold uppercase leading-none">2024</span>
-             </div>
-          </div>
-        </motion.div>
-      </footer>
     </div>
   );
 }
