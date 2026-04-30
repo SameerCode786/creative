@@ -344,11 +344,11 @@ export default function App() {
         </div>
 
         {/* Stats Section */}
-        <section className="py-12 md:py-16 relative overflow-hidden">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1000px] h-[400px] bg-[#2f2441]/20 blur-[130px] rounded-full -z-10" />
+        <section className="py-8 md:py-12 relative overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1000px] h-[300px] bg-[#2f2441]/20 blur-[130px] rounded-full -z-10" />
           
           <div className="max-w-6xl mx-auto px-6">
-            <div className="flex flex-col md:flex-row items-center justify-center md:-space-x-20">
+            <div className="flex flex-col md:flex-row items-center justify-center md:-space-x-24">
               {[
                 { number: "10+", label: "Years of Experience" },
                 { number: "2000+", label: "Successful Projects" },
@@ -361,18 +361,18 @@ export default function App() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: idx * 0.1 }}
-                  className={`w-48 h-48 md:w-56 md:h-56 rounded-full bg-[#453b56]/60 border border-white/20 backdrop-blur-3xl flex flex-col items-center justify-center text-center p-6 -mb-12 md:mb-0 relative group hover:bg-[#453b56]/80 transition-all duration-500 shadow-[0_0_50px_rgba(0,0,0,0.5)] ${
-                    idx % 2 === 1 ? 'md:-translate-y-6' : 'md:translate-y-6'
+                  className={`w-40 h-40 md:w-56 md:h-56 rounded-full bg-[#453b56]/80 border border-white/20 backdrop-blur-3xl flex flex-col items-center justify-center text-center p-6 -mb-16 md:mb-0 relative group hover:bg-[#453b56] transition-all duration-500 shadow-[0_0_60px_rgba(0,0,0,0.6)] ${
+                    idx % 2 === 1 ? 'md:-translate-y-8' : 'md:translate-y-8'
                   }`}
                   style={{ zIndex: idx }}
                 >
-                  <span className="text-4xl md:text-5xl font-bold font-sans tracking-tighter mb-1 text-white">{stat.number}</span>
-                  <p className="text-[10px] md:text-[12px] font-normal text-gray-200 uppercase tracking-[0.1em] font-sans max-w-[100px] leading-tight">
+                  <span className="text-3xl md:text-5xl font-bold font-sans tracking-tighter mb-1 text-white">{stat.number}</span>
+                  <p className="text-[9px] md:text-[12px] font-normal text-gray-200 uppercase tracking-[0.1em] font-sans max-w-[100px] leading-tight">
                     {stat.label}
                   </p>
                   
-                  {/* Subtle rim light for the 'chain' effect */}
-                  <div className="absolute inset-0 rounded-full border-t border-l border-white/10 pointer-events-none" />
+                  {/* Glowing rim for the 'chain' effect */}
+                  <div className="absolute inset-0 rounded-full border-t-2 border-l-2 border-white/30 pointer-events-none opacity-40 group-hover:opacity-70 transition-opacity" />
                 </motion.div>
               ))}
             </div>
@@ -445,7 +445,7 @@ export default function App() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-b from-white/10 to-transparent border border-white/5 rounded-[40px] p-10 flex flex-col items-start text-left group hover:border-violet-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-violet-500/5 backdrop-blur-sm relative overflow-hidden"
+                  className="bg-[linear-gradient(135deg,#674b94_0%,#241a3d_100%)] border border-white/10 rounded-[40px] p-10 flex flex-col items-start text-left group hover:border-white/20 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)] relative overflow-hidden"
                 >
                   <div className="absolute top-0 right-0 w-32 h-32 bg-violet-500/5 blur-[60px] rounded-full -z-10" />
                   <div className="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
