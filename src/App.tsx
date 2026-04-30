@@ -325,8 +325,8 @@ export default function App() {
 
           {/* CTA & Trust Badges Section */}
           <section className="mt-20 md:mt-28 mb-4 relative flex flex-col items-center">
-            {/* Soft Radial Glow behind CTA and Badges (requested #2e2340) */}
-            <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[850px] h-[450px] bg-[#2e2340]/40 blur-[90px] rounded-full -z-10" />
+            {/* Soft Radial Glow behind CTA and Badges (requested #2f2440) */}
+            <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[850px] h-[450px] bg-[#2f2440]/60 blur-[100px] rounded-full -z-10" />
             
             <motion.button 
               whileHover={{ scale: 1.01 }}
@@ -337,7 +337,7 @@ export default function App() {
               <ArrowRight size={18} />
             </motion.button>
 
-            {/* Trust Badges Container - Tighter alignment */}
+            {/* Trust Badges Container - Tighter alignment with new #2f2b35 background */}
             <div className="flex flex-wrap justify-center items-center gap-2 md:gap-3 px-4 w-full">
               {[
                 { src: "https://framerusercontent.com/images/Wk9abNC6wrvbpFTvRBQEbZlHpBQ.svg", alt: "Semrush" },
@@ -346,7 +346,7 @@ export default function App() {
                 { src: "https://framerusercontent.com/images/P1K0vbIuFtj6qDOLBaFZJ5Vt0Zs.svg", alt: "Google Partner" },
                 { src: "https://framerusercontent.com/images/ylygHIGZLGQWdyEuzHn11SJt74.svg", alt: "MENA Search Awards" }
               ].map((logo, idx) => (
-                <div key={idx} className="bg-[#0f0f0f]/80 border border-white/5 px-4 py-3 md:px-8 md:py-4 rounded-[12px] md:rounded-[18px] flex items-center justify-center min-w-[90px] md:min-w-[150px] h-12 md:h-16 shadow-lg backdrop-blur-sm">
+                <div key={idx} className="bg-[#2f2b35]/80 border border-white/5 px-4 py-3 md:px-8 md:py-4 rounded-[12px] md:rounded-[18px] flex items-center justify-center min-w-[90px] md:min-w-[150px] h-12 md:h-16 shadow-lg backdrop-blur-sm">
                   <img 
                     src={logo.src} 
                     alt={logo.alt} 
@@ -479,22 +479,22 @@ export default function App() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full">
               {[
                 {
-                  icon: <Search className="text-violet-400" size={28} />,
+                  icon: <Search className="text-white" size={28} />,
                   title: "SEO (Optimization)",
                   description: "We don’t just \"rank\" websites; we occupy the digital high ground. Our team hunts down the most competitive keywords in the USA and dominates them, dragging your brand into the light."
                 },
                 {
-                  icon: <Target className="text-orange-400" size={28} />,
+                  icon: <Target className="text-white" size={28} />,
                   title: "Google Ads",
                   description: "Jump the line with surgical PPC campaigns. No wasted spend, no fluff metrics—just high-intent clicks and a relentless focus on your North American ROI."
                 },
                 {
-                  icon: <Cpu className="text-blue-400" size={28} />,
+                  icon: <Cpu className="text-white" size={28} />,
                   title: "Web Design",
                   description: "Pretty sites are useless if they don't sell. We build high-performance storefronts that look stunning and convert like crazy from sleek UX to fast code."
                 },
                 {
-                  icon: <Users className="text-emerald-400" size={28} />,
+                  icon: <Users className="text-white" size={28} />,
                   title: "Social Marketing",
                   description: "Stop shouting into the void. We create thumb-stopping content that turns scrollers into a dedicated community. Manage your voice across the States."
                 }
@@ -504,21 +504,18 @@ export default function App() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="bg-[linear-gradient(135deg,#674b94_0%,#241a3d_100%)] border border-white/10 rounded-[24px] md:rounded-[40px] p-6 md:p-10 flex flex-col items-start text-left group hover:border-white/20 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)] relative overflow-hidden"
+                  className="bg-linear-to-br from-[#684b96] to-black border border-white/5 rounded-[24px] md:rounded-[40px] p-8 md:p-10 flex flex-col items-start text-left group transition-all duration-500 shadow-[1px_1px_15px_rgba(255,255,255,0.1)] hover:shadow-[1px_1px_25px_rgba(255,255,255,0.15)] relative overflow-hidden h-full min-h-[380px]"
                 >
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-violet-500/5 blur-[60px] rounded-full -z-10" />
-                  <div className="w-12 h-12 md:w-16 md:h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:scale-110 transition-transform duration-500">
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-[#6b5194]/60 backdrop-blur-md border-t border-white/20 rounded-2xl flex items-center justify-center mb-6 md:mb-10 group-hover:scale-105 transition-transform duration-500 shadow-xl">
                     {service.icon}
                   </div>
-                  <h4 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4 group-hover:text-violet-300 transition-colors duration-500">{service.title}</h4>
-                  <p className="text-sm md:text-base text-gray-400 font-sans leading-relaxed mb-6 md:mb-8 flex-grow">
+                  <h4 className="font-unbounded text-xl md:text-2xl font-bold text-white mb-4 leading-tight group-hover:text-violet-200 transition-colors duration-500">{service.title}</h4>
+                  <p className="text-sm md:text-base text-white/70 font-sans leading-relaxed mb-10 flex-grow">
                     {service.description}
                   </p>
-                  <button className="flex items-center gap-2 text-xs md:text-sm font-bold tracking-widest uppercase text-white hover:text-violet-400 transition-colors group/btn">
+                  <button className="flex items-center gap-3 text-[10px] md:text-xs font-black tracking-[0.2em] uppercase text-white font-unbounded group/btn">
                     Learn More
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border border-white/10 flex items-center justify-center group-hover/btn:border-violet-400/50 transition-colors">
-                      <ArrowRight size={14} className="group-hover/btn:translate-x-0.5 transition-transform" />
-                    </div>
+                    <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
                   </button>
                 </motion.div>
               ))}
