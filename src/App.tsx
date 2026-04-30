@@ -149,26 +149,26 @@ export default function App() {
                 initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="bg-[#0c0c0c] p-5 md:p-6 rounded-[24px] md:rounded-[32px] shadow-[0_25px_50px_rgba(0,0,0,0.8)] relative overflow-hidden group w-full max-w-full md:max-w-[380px]"
+                className="bg-black/60 py-4 px-6 rounded-[24px] md:rounded-[32px] shadow-[0_15px_30px_-10px_rgba(255,255,255,0.3),0_1px_4px_rgba(255,255,255,0.1)] relative overflow-hidden group w-full max-w-full md:max-w-[400px] border border-white/5"
               >
-                <p className="text-[10px] md:text-[12px] font-normal tracking-[0.1em] mb-0 text-white/80 uppercase font-sans px-2 text-center md:text-left">
+                <p className="text-[9px] md:text-[11px] font-bold tracking-[0.1em] mb-1 text-white uppercase font-unbounded text-center md:text-left">
                   Our Clients Love Working With Us
                 </p>
-                <div className="h-px w-full bg-white/10 mt-[5px] mb-[5px]" />
-                <div className="flex items-center justify-center md:justify-start gap-4 px-2 py-2">
-                  <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center p-2 shrink-0">
-                    <svg viewBox="0 0 24 24" className="w-full h-full fill-current text-[#4285F4]">
+                <div className="h-px w-full bg-white/10 mb-3" />
+                <div className="flex items-center justify-center md:justify-start gap-4 py-1">
+                  <div className="w-8 h-8 flex items-center justify-center shrink-0">
+                    <svg viewBox="0 0 24 24" className="w-full h-full">
                       <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
                       <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
                       <path d="M5.84 14.1c-.22-.66-.35-1.36-.35-2.1s.13-1.44.35-2.1V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l3.66-2.84z" fill="#FBBC05"/>
                       <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
                     </svg>
                   </div>
-                  <div>
-                    <div className="flex gap-1 mb-1">
-                      {[1, 2, 3, 4, 5].map(i => <Star key={i} size={11} fill="#fbbf24" className="text-amber-400" />)}
+                  <div className="flex flex-col">
+                    <div className="flex gap-1 mb-0.5">
+                      {[1, 2, 3, 4, 5].map(i => <Star key={i} size={10} fill="#fbbf24" className="text-amber-400" />)}
                     </div>
-                    <p className="text-sm font-bold text-white font-sans">267+ 5 Star Reviews</p>
+                    <p className="text-[13px] md:text-[14px] font-bold text-white font-unbounded">267+ 5 Star Reviews</p>
                   </div>
                 </div>
               </motion.div>
@@ -208,7 +208,7 @@ export default function App() {
               <img 
                 src="https://framerusercontent.com/images/fmhinA849mNotIjj65C3PSSHNQ.png?width=993&height=400" 
                 alt="Google Reviews" 
-                className="h-6 sm:h-10 md:h-16 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="h-6 sm:h-10 md:h-16 w-auto"
               />
             </div>
 
@@ -217,7 +217,7 @@ export default function App() {
               <img 
                 src="https://www.gstatic.com/partners/badge/images/2025/PartnerBadgeClickable.svg" 
                 alt="Google Partner" 
-                className="h-8 sm:h-12 md:h-20 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="h-8 sm:h-12 md:h-20 w-auto"
               />
             </div>
 
@@ -226,7 +226,7 @@ export default function App() {
               <img 
                 src="https://threebestrated.com/awards/advertising_agencies-newark-2025-drk.svg" 
                 alt="Three Best Rated" 
-                className="h-10 sm:h-14 md:h-24 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="h-10 sm:h-14 md:h-24 w-auto"
               />
             </div>
           </motion.div>
