@@ -380,8 +380,11 @@ export default function App() {
         </section>
 
         {/* Our Best Services Section Wrapper */}
-        <div className="w-full bg-[#0a0a0a]">
-          <section className="py-32 max-w-6xl mx-auto px-6">
+        <div className="w-full bg-black bg-pattern-dark relative overflow-hidden">
+          {/* Central Atmospheric Glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1000px] h-[800px] bg-violet-600/5 blur-[160px] rounded-full pointer-events-none" />
+          
+          <section className="py-32 max-w-6xl mx-auto px-6 relative z-10">
             <div className="flex flex-col items-center text-center">
             {/* Badge */}
             <motion.div
@@ -588,7 +591,7 @@ export default function App() {
       </div>
 
       {/* New Section: Conversion-Focused Design Marquee */}
-      <div className="w-full py-12 md:py-16 overflow-hidden relative border-t border-white/5 bg-[#0a0a0a]">
+      <div className="w-full py-12 md:py-16 overflow-hidden relative border-t border-white/5 bg-black bg-pattern-dark">
         <div className="flex whitespace-nowrap">
           <motion.div 
             initial={{ x: 0 }}
@@ -621,7 +624,7 @@ export default function App() {
       </div>
 
       {/* Large Gallery Image Section */}
-      <section className="bg-[#0a0a0a] pb-24 md:pb-32 px-6">
+      <section className="bg-black bg-pattern-dark pb-24 md:pb-32 px-6">
         <div className="max-w-[1400px] mx-auto overflow-hidden rounded-[40px] shadow-[0_30px_100px_rgba(0,0,0,0.8)] border border-white/5">
           <motion.img 
             initial={{ opacity: 0, y: 50 }}
