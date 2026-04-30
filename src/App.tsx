@@ -273,6 +273,73 @@ export default function App() {
               />
             </motion.div>
           </section>
+
+          {/* CTA & Trust Badges Section */}
+          <section className="mt-32 mb-5 relative flex flex-col items-center">
+            {/* Radial Glow Effect */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1000px] h-[500px] bg-[#2f2441]/40 blur-[130px] rounded-full -z-10" />
+            
+            <motion.button 
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="btn-gradient w-full max-w-[500px] py-7 rounded-full flex items-center justify-center gap-4 text-xs md:text-sm font-black tracking-[0.2em] uppercase mb-[10px] shadow-2xl shadow-orange-500/10"
+            >
+              Get 30 Min Free Consultation
+              <ArrowRight size={20} />
+            </motion.button>
+
+            {/* Trust Badges Container */}
+            <div className="flex flex-wrap justify-center items-center gap-4 md:gap-5 px-4 w-full">
+              {[
+                { src: "https://framerusercontent.com/images/Wk9abNC6wrvbpFTvRBQEbZlHpBQ.svg", alt: "Semrush" },
+                { src: "https://framerusercontent.com/images/OiqLu1V7BGzaa3VAJAPFnyKivA.svg", alt: "HubSpot" },
+                { src: "https://framerusercontent.com/images/wOIVYQVwYZeRiPZwWU7LtqCVok.svg", alt: "Meta" },
+                { src: "https://framerusercontent.com/images/P1K0vbIuFtj6qDOLBaFZJ5Vt0Zs.svg", alt: "Google Partner" },
+                { src: "https://framerusercontent.com/images/ylygHIGZLGQWdyEuzHn11SJt74.svg", alt: "MENA Search Awards" }
+              ].map((logo, idx) => (
+                <div key={idx} className="bg-[#111111]/80 border border-white/5 p-4 py-7 rounded-[24px] flex items-center justify-center min-w-[120px] md:min-w-[180px] h-20 shadow-xl backdrop-blur-sm">
+                  <img 
+                    src={logo.src} 
+                    alt={logo.alt} 
+                    className="h-8 md:h-10 w-auto object-contain brightness-110"
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+
+        {/* Infinite Scrolling Marquee */}
+        <div className="w-full mt-5 py-12 md:py-16 overflow-hidden relative border-t border-white/5">
+          <div className="flex whitespace-nowrap">
+            <motion.div 
+              initial={{ x: 0 }}
+              animate={{ x: "-50%" }}
+              transition={{ 
+                duration: 45, 
+                repeat: Infinity, 
+                ease: "linear" 
+              }}
+              className="flex items-center gap-12 md:gap-24 pr-12 md:pr-24"
+            >
+              {[1, 2].map((group) => (
+                <div key={group} className="flex items-center gap-12 md:gap-24">
+                  {["Website Design", "Content Marketing", "Digital Agency", "Digital Strategy"].map((item, index) => (
+                    <div key={index} className="flex items-center gap-12 md:gap-24">
+                      <span className="text-4xl md:text-[80px] font-normal font-unbounded text-white tracking-[-0.04em] uppercase leading-none">
+                        {item}
+                      </span>
+                      <div className="flex items-center justify-center">
+                        <svg width="40" height="40" viewBox="0 0 100 100" className="text-white w-8 h-8 md:w-14 md:h-14 opacity-30">
+                          <path d="M50 0 L56 44 L100 50 L56 56 L50 100 L44 56 L0 50 L44 44 Z" fill="currentColor" />
+                        </svg>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </motion.div>
+          </div>
         </div>
       </main>
     </div>
