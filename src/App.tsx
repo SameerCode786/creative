@@ -86,40 +86,81 @@ export default function App() {
           </button>
           
           <button 
-            className="lg:hidden p-2 text-white bg-white/5 border border-white/10 rounded-full"
+            id="mobile-menu-toggle"
+            className="lg:hidden p-2 text-white hover:bg-white/5 transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            <Menu size={32} strokeWidth={1.5} />
           </button>
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
+      {/* Mobile Menu Overlay (Off-Canvas) */}
+      <AnimatePresence mode="wait">
         {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-[49] bg-[#0a0a0a] pt-24 px-6 lg:hidden"
-          >
-            <div className="flex flex-col gap-6 items-center pt-8">
-              {navItems.map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-2xl font-bold font-unbounded text-white tracking-widest hover:text-violet-400 transition-colors"
-                >
-                  {item}
-                </a>
-              ))}
-            </div>
-          </motion.div>
+          <>
+            {/* Backdrop Dimming */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="fixed inset-0 z-[60] bg-black/50 backdrop-blur-sm lg:hidden"
+            />
+            
+            {/* Off-Canvas Panel */}
+            <motion.div
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="fixed top-0 left-0 bottom-0 w-[300px] z-[70] bg-[#4c3370] shadow-2xl flex flex-col p-8 lg:hidden"
+            >
+              {/* Close Button */}
+              <button 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="self-end mb-12 p-2 rounded-full border border-white/10 hover:bg-white/5 transition-colors"
+                id="close-mobile-menu"
+              >
+                <X size={28} className="text-white" />
+              </button>
+
+              {/* Menu List */}
+              <nav className="flex flex-col gap-8">
+                {navItems.map((item) => (
+                  <motion.a
+                    key={item}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 }}
+                    href={`#${item.toLowerCase()}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-2xl font-bold font-unbounded text-white tracking-widest hover:text-violet-400 transition-colors"
+                  >
+                    {item}
+                  </motion.a>
+                ))}
+              </nav>
+
+              <div className="mt-auto pt-8 border-t border-white/5">
+                <p className="text-[10px] font-black tracking-widest text-white/30 uppercase font-sans">
+                  CREATIVE 360 PRO © 2026
+                </p>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
 
-      {/* Hero Section */}
+      <motion.div 
+        animate={{ 
+          x: isMobileMenuOpen ? 20 : 0,
+          filter: isMobileMenuOpen ? "brightness(0.5)" : "brightness(1)"
+        }}
+        transition={{ type: "spring", damping: 25, stiffness: 200 }}
+        className="relative z-10"
+      >
+        {/* Hero Section */}
       <main className="container mx-auto px-6 pt-24 pb-12 md:pt-48 md:px-12">
         <div className="max-w-6xl mx-auto">
           <motion.h2 
@@ -734,6 +775,7 @@ export default function App() {
           </div>
         </div>
       </footer>
+      </motion.div>
     </div>
   );
 }
