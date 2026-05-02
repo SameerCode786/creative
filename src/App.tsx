@@ -437,7 +437,7 @@ export default function App() {
       </div>
 
         {/* Stats Section - Pixel Perfect Spotlight Layout */}
-        <section id="reviews" className="py-12 md:py-16 relative w-full overflow-hidden">
+        <section id="reviews" className="py-6 md:py-16 relative w-full overflow-hidden">
           {/* Spotlight Vignette: Black at edges, transparent in center */}
           <div 
             className="absolute inset-0 pointer-events-none -z-10"
@@ -446,28 +446,28 @@ export default function App() {
             }} 
           />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#654991]/20 blur-[100px] rounded-full -z-20" />
-          
-          <div className="max-w-4xl mx-auto px-4 overflow-x-auto no-scrollbar">
-            <div className="flex flex-row items-center justify-center -space-x-6 sm:-space-x-10 md:-space-x-14 min-w-max pb-4">
+            <div className="max-w-4xl mx-auto px-4">
+            {/* Mobile: Overlapping 2x2 Grid | Desktop: Overlapping Flex Row */}
+            <div className="grid grid-cols-2 w-fit mx-auto gap-0 md:flex md:flex-row md:items-center md:justify-center md:gap-0 md:-space-x-10 lg:md:-space-x-14 md:w-fit pb-4">
               {[
-                { number: "10+", label: "Years of Experience" },
-                { number: "2000+", label: "Successful Projects" },
-                { number: "1900+", label: "Happy Clients" },
-                { number: "267+", label: "5 Star Reviews" },
+                { number: "10+", label: "Years of Experience", mobilePos: "translate-x-3 translate-y-3" },
+                { number: "2000+", label: "Successful Projects", mobilePos: "-translate-x-3 translate-y-3" },
+                { number: "1900+", label: "Happy Clients", mobilePos: "translate-x-3 -translate-y-3" },
+                { number: "267+", label: "5 Star Reviews", mobilePos: "-translate-x-3 -translate-y-3" },
               ].map((stat, idx) => (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: idx * 0.1 }}
-                  className="w-32 h-32 sm:w-44 sm:h-44 md:w-56 md:h-56 rounded-full bg-[#72618d]/40 border border-white/10 backdrop-blur-xl flex flex-col items-center justify-center text-center p-4 relative group hover:bg-[#72618d]/60 transition-all duration-300 shadow-[0_10px_40px_rgba(0,0,0,0.3)]"
+                  className={`mx-auto w-28 h-28 sm:w-44 sm:h-44 md:w-56 md:h-56 rounded-full bg-[#72618d]/40 border border-white/5 backdrop-blur-xl flex flex-col items-center justify-center text-center p-3 relative group hover:bg-[#72618d]/60 transition-all duration-300 shadow-[0_10px_40px_rgba(0,0,0,0.3)] md:translate-x-0 md:translate-y-0 ${stat.mobilePos || ""}`}
                   style={{ zIndex: idx }}
                 >
-                  <p className="font-unbounded text-lg sm:text-2xl md:text-[42px] font-bold text-white leading-none mb-1 md:mb-2">
+                  <p className="font-unbounded text-base sm:text-2xl md:text-[42px] font-bold text-white leading-none mb-1 md:mb-2">
                     {stat.number}
                   </p>
-                  <p className="text-[7px] sm:text-[9px] md:text-[11px] font-medium text-white/90 uppercase tracking-wider font-sans max-w-[80px] sm:max-w-[100px] md:max-w-[120px] leading-[1.2]">
+                  <p className="text-[6.5px] sm:text-[9px] md:text-[11px] font-medium text-white/90 uppercase tracking-wider font-sans max-w-[70px] sm:max-w-[100px] md:max-w-[120px] leading-[1.2]">
                     {stat.label}
                   </p>
                   
