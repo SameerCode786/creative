@@ -167,7 +167,7 @@ export default function App() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="font-unbounded text-[24px] md:text-[50px] leading-[1.1] font-normal tracking-tight mb-4 md:mb-8"
+            className="font-unbounded mt-10 md:mt-0 text-[24px] md:text-[50px] leading-[1.1] font-normal tracking-tight mb-4 md:mb-8"
           >
             STOP SEARCHING
           </motion.h2>
@@ -176,7 +176,7 @@ export default function App() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-unbounded text-[32px] sm:text-[40px] md:text-[70px] leading-[1.2] font-normal tracking-tighter mb-12 md:mb-20 text-[#a390c5] drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] uppercase"
+            className="font-unbounded mt-3 md:mt-0 text-[32px] sm:text-[40px] md:text-[70px] leading-[1.2] font-normal tracking-tighter mb-12 md:mb-20 text-[#a390c5] drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] uppercase"
           >
             YOU&apos;VE FOUND THE TOP <br className="hidden md:block" />
             DIGITAL MARKETING <br className="hidden md:block" />
